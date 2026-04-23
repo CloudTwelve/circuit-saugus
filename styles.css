@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 2s;
+    font-family: "Commissioner"
+}
+
+body {
+    height: 2000px;
+    width: 100vw;
+    background-color: #DDDDDD;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.logo-nav-a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-logo {
+    width: 200px;
+    height: auto;
+    margin: 0 15px;
+}
+
+.rob-logo {
+    width: 120px;
+    height: auto;
+    margin: 0 15px;
+}
+
+.nav-cont {
+    background: linear-gradient(#666666, #777777 );
+    height: 6em;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px 0 0 20px;
+}
+
+.nav-item * {
+    background: linear-gradient(#DEDEDE,#EDEDED);
+    color: black;
+    font-family: "Mozilla Headline";
+    font-size: 2em;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    background: #AAAAAA;
+}
+
+a {
+    text-decoration: none;
+    font-style: italic;
+}
+
+.hero {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.hero-inner {
+    height: 550px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.circuit-main {
+    width: 500px;
+}
+
+.hero-text {
+    width: 50%;
+    padding: 25px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.hero-para {
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.hero-title {
+    font-size: 3.2em;
+    font-weight: 900;
+    font-family: "Mozilla Headline";
+    display: block;
+}
+
+.background {
+    background-image: url("img/checker.png");
+    background-size: 1%;
+    background-repeat: repeat;
+    background-color: #CCCCCC;
+    width: 200vw;
+    height: 2000px; 
+    animation: pan 20s linear infinite;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+@keyframes pan {
+    0% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
