@@ -6,11 +6,33 @@
     font-family: "Commissioner"
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    height: 2000px;
+    height: 5000px;
     width: 100vw;
     background-color: #DDDDDD;
     overflow-x: hidden;
+}
+
+.background {
+    background-image: url("img/checker.png");
+    filter: brightness(90%);
+    background-size: 1%;
+    background-repeat: repeat;
+    background-color: #CCCCCC;
+    width: 200vw;
+    height: 5000px; 
+    animation: pan 20s linear infinite;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.hidden {
+    display: none;
 }
 
 .dot {
@@ -36,7 +58,7 @@ nav {
 .small-logo {
     width: 200px;
     height: auto;
-    filter: grayscale(20%) hue-rotate(40deg) brightness(180%) contrast(130%);
+    filter: grayscale(40%) hue-rotate(15deg) brightness(180%) contrast(130%);
     margin: 0 15px;
 }
 
@@ -137,6 +159,7 @@ a {
 
 .cd-cont {
     margin-top: 70px;
+    margin-bottom: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,21 +174,19 @@ a {
 }
 
 .countdown-label .txt {
-    font-family: "Mozilla Headline";
-    font-style: italic;
-    font-weight: 900;
+    font-family: "Racing Sans One";
+    font-weight: 700;
     background-color: black;
     color: white;
     padding: 5px 15px;
     border-radius: 10px;
-    border-color: #545454;
+    border-color: rgb(145,3,0);
     border-style: solid;
     border-width: 5px;
     font-size: 1.5em;
 }
 
 .countdown {
-    background: radial-gradient(#434343, #545454);
     border-radius: 20px;
     width: 600px;
     height: 150px;
@@ -178,7 +199,7 @@ a {
 }
 
 .countdown-inner {
-    background: radial-gradient(#121212, #212121);
+    background: radial-gradient(#424242, black);
     border-radius: 20px;
     width: 550px;
     height: 130px;
@@ -187,18 +208,10 @@ a {
     justify-content: center;
     align-items: center;
     padding: 0 5px;
-}
-
-.countdown-color {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(darkred, red, orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    border-radius: 10px;
+    border-color: rgb(145,3,0);
+    border-style: solid;
+    border-width: 10px;
 }
 
 /*
@@ -213,25 +226,172 @@ a {
 */
 
 .time span {
-    font-family: "Orbitron";
+    font-family: "Racing Sans One";
     font-size: 4em;
     font-weight: 900;
-    -webkit-text-stroke: 2px rgb(150,0,0);
     margin: 0 5px;
+    color: white;
 }
 
-.background {
-    background-image: url("img/checker.png");
-    filter: brightness(90%);
-    background-size: 1%;
-    background-repeat: repeat;
-    background-color: #CCCCCC;
-    width: 200vw;
-    height: 2000px; 
-    animation: pan 20s linear infinite;
+.about {
+    width: 90%;
+    height: 1500px;
+    margin: auto;
+}
+
+.about-inner {
+    width: 90%;
+    height: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #777777;
+    box-shadow: 20px 20px 0 #444444;
+    position: sticky;
+    top: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.traffic-outer {
+    background-color: #AAAAAA;
+    box-shadow: 10px 10px 0px #444444;
+    width: 150px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
     position: absolute;
-    top: 0;
-    z-index: -1;
+    right: 5%;
+}
+
+.light {
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+}
+
+.red {
+    animation: traffic-red;
+    animation-timeline: view();
+    background: darkred;
+    box-shadow: inset 0px 0px 50px firebrick, 0px 0px 15px #333333;
+}
+
+.yellow {
+    animation: traffic-yellow;
+    animation-timeline: view();
+    background-color: #333333;
+    box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+}
+
+.green {
+    animation: traffic-green;
+    animation-timeline: view();
+    background-color: #333333;
+    box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+}
+
+.title-box {
+    background: #555555;
+    padding: 10px;
+    width: 250px;
+    box-shadow: -5px -5px 0 #444444;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+
+.title {
+    font-family: "Geologica";
+    color: white;
+    font-weight: 900;
+    font-size: 2em;
+    text-align: center;
+}
+
+.box {
+    height: 100%;
+    margin-top: 100px;
+}
+
+.text {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 70%;
+}
+
+.text * {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
+.schedule {
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.schedule-title {
+    font-family: "Racing Sans One";
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border-color: rgb(145,3,0);
+    border-style: solid;
+    border-width: 5px;
+    font-size: 2.2em;
+    transform: skew(-10deg);
+    margin: auto;
+    width: 225px;
+    text-align: center;
+}
+
+.board {
+    width: 70%;
+    height: auto;
+    padding: 10px;
+    padding-bottom: 30px;
+    background: radial-gradient(#424242, black);
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    border-color: rgb(145,3,0);
+    border-style: solid;
+    border-width: 10px;
+}
+
+.sub-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-head {
+    font-family: "Mozilla Headline";
+    font-size: 2.2em;
+    color: white;
+    margin: 20px;
+}
+
+.row {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: rgba(255,255,255,0.6) 2px solid;
+}
+
+.row * {
+    color: white;
+    font-size: 1.2em;
 }
 
 @keyframes pan {
@@ -241,6 +401,110 @@ a {
 
     100% {
         transform: translateX(0%);
+    }
+}
+
+@keyframes traffic-red {
+    0% {
+        background: darkred;
+        box-shadow: inset 0px 0px 50px firebrick, 0px 0px 15px lightpink;
+    }
+
+    33% {
+        background: darkred;
+        box-shadow: inset 0px 0px 50px firebrick, 0px 0px 15px lightpink;
+    }
+
+    40% {
+        background-color: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+
+    100% {
+        background-color: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+}
+
+@keyframes traffic-yellow {
+    0% {
+        background: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+
+    33% {
+        background: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+
+    40% {
+        background-color: goldenrod;
+        box-shadow: inset 0px 0px 50px gold, 0px 0px 10px lightyellow;
+    }
+
+    53% {
+        background-color: goldenrod;
+        box-shadow: inset 0px 0px 50px gold, 0px 0px 10px lightyellow;
+    }
+    
+    60% {
+        background-color: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+
+    100% {
+        background-color: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+}
+
+@keyframes traffic-green {
+    0% {
+        background: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+
+    53% {
+        background: #333333;
+        box-shadow: inset 0px 0px 50px #222222, 0px 0px 15px #333333;
+    }
+    
+    60% {
+        background-color: darkgreen;
+        box-shadow: inset 0px 0px 50px green, 0px 0px 10px lightgreen;
+    }
+
+    100% {
+        background-color: darkgreen;
+        box-shadow: inset 0px 0px 50px green, 0px 0px 10px lightgreen;
+    }
+}
+
+
+@keyframes traffic {
+    0% {
+        background: darkred;
+        box-shadow: inset 0px 0px 50px firebrick, 0px 0px 15px #333333;
+    }
+
+    30% {
+        background: darkred;
+        box-shadow: inset 0px 0px 50px firebrick, 0px 0px 15px #333333;
+    }
+
+    50% {
+        background-color: goldenrod;
+        box-shadow: inset 0px 0px 50px gold, 0px 0px 15px #333333;
+    }
+
+    75% {
+        background-color: darkgreen;
+        box-shadow: inset 0px 0px 50px green, 0px 0px 15px black;
+    }
+
+    100% {
+        background-color: darkgreen;
+        box-shadow: inset 0px 0px 50px green, 0px 0px 15px black;
     }
 }
 
