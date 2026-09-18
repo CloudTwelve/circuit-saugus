@@ -8,23 +8,24 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 body {
-    height: 6000px;
+    height: 5500px;
     width: 100vw;
     background-color: #BBBBBB;
     overflow-x: hidden;
 }
 
 .background {
-    background-image: url("img/checker.png");
+    background-image: url("./img/checker.png");
     filter: brightness(90%);
     background-size: 1%;
     background-repeat: repeat;
     background-color: #CCCCCC;
     width: 200vw;
-    height: 6000px; 
+    height: 5600px; 
     animation: pan 20s linear infinite;
     position: absolute;
     top: 0;
@@ -428,6 +429,14 @@ a {
     margin-top: 80px;
 }
 
+.speaker-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .speaker-title {
     width: 100%;
     background: radial-gradient(firebrick, darkred);
@@ -455,15 +464,19 @@ a {
 }
 
 .speaker-cont {
-    width: 100%;
-    height: 300px;
+    width: 300px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .speaker-mod {
-    width: 200px;
+    width: 400px;
+}
+
+.speaker-text {
+    text-align: center;
 }
 
 .speaker-img {
@@ -475,6 +488,12 @@ a {
     margin: auto;
     margin-bottom: 10px;
     background: gray;
+}
+
+.speaker-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .speaker-name {
@@ -526,6 +545,17 @@ a {
     justify-content: center; /* Horizontal centering */
     align-items: center; 
     padding: 10px;
+}
+
+.sponsor-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor-card img {
+    width: 200px;
+    height: 100px;
 }
 
 .email-link {
